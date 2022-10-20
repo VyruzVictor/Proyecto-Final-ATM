@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Cajero automatico</title>
+</head>
+<body>
+    <h1>BIENVENIDO ATM GUATEMALA</h1>
+    <br>
+    <div style="text-align: left;">
+        <img SRC="tarjeta.jpg" width="250">
+    </div>
+    <br>
+    <h2>POR FAVOR INGRESE, NUMERO DE TARJETA Y PIN CORRECTAMENTE</h2>
+    <form action="" class= "registro">
+        <h4>Login</h4> <!--encabezado de la interfaz-->
+         <!--le pedimos al usuario que ingrese el numero de la tarjeta, el dato correcto es, 0909222869-->
+        <input class= "controls" type="text" name="usu" id="" placeholder="Ingrese numero de tarjeta"> <!--cuadro para el ingreso de los datos, lo identificamos con el nombre de usu(usuario)-->
+        <!--creamos un cuadro de texto identificador de la contraseña-->
+        <input class= "controls" type="password" name="contra" id="" placeholder="Ingrese la contraseña"> <!--valor verdadero de la contraseña es 2022-->
+        <input class= "boton" type="button" value="Ingresar" onclick="login(this.form)"> <!--creamos un boton que al hacer le click nos muestre el resultado de la funcion de java-->
+        <br>
+        <p><a href="#">¿Olvidaste tu pin?</a></p>
+    </form>
+
+    <script> //creamos un script para trabajar con java 
+        function login (form){ //creamos una funcion que trabaje con los datos que tiene el formulario 
+            if (form.usu.value== "0909222869") {  //se crea un if para hacer la compracion de los datos que ingresa el usuario con los datos que tenemos como correctos 
+                if (form.contra.value=="2022") { //creamos otro if para la contraseña 
+                    location="principal.html"; //si ambos datos son los correcto se nos dirigira a la pagina que tiene como nombre principal 
+                } else {
+                    alert("Contraseña incorrecta"); //una alerta que le diga al usurio cuando los datos son los incorrectos 
+                }
+            } else {
+                alert("Usuario incorrecto"); 
+            }
+        }
+    </script>
+</body>
+</html>
